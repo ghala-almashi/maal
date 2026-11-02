@@ -1,0 +1,23 @@
+{% load static %}<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>التوأم الرقمي للبحر الأحمر والخليج العربي</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<link rel="stylesheet" href="{% static 'map/css/style.css' %}">
+</head><body>
+<div id="map"></div><canvas id="bg"></canvas><canvas id="cv"></canvas>
+<div id="top">
+ <div class="card"><h1>🌊 التوأم الرقمي: رصد النفايات البحرية</h1></div>
+ <div class="card"><button id="r-red" class="on">البحر الأحمر</button> <button id="r-gulf">الخليج العربي</button></div>
+ <div class="card"><button id="l-wind" class="on">الرياح</button> <button id="l-cur">التيارات</button> <button id="l-wave">الأمواج</button></div>
+</div>
+<div id="side" class="card">
+ <div id="st">جاري التحميل...</div><hr style="border-color:#28425e">
+ <div class="grad"></div><div class="lg"><span>بطيء</span><span id="lgt">سرعة الرياح</span><span>سريع</span></div><hr style="border-color:#28425e">
+ <div id="clean"></div><hr style="border-color:#28425e">
+ <div style="opacity:.75">🔴 النقاط الحمراء: مواقع نفايات <b>تجريبية</b>، والخط يوضح انجرافها المحسوب من التيار + 3% من سرعة الرياح.</div>
+</div>
+<div id="bar" class="card"><button id="play">▶</button><input id="sl" type="range" min="0" max="47" value="0"><div id="hl"></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="{% static 'map/js/app.js' %}"></script>
+</body></html>
